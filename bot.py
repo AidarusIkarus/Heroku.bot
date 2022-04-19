@@ -12,6 +12,12 @@ def start(message):
     markup.add(btn1, btn2)
     bot.send_message(message.chat.id, 'Вас приветствует бот проекта "Робот-тьютор"! Здесь вы можете выбрать режим игры:')
 
+@bot.message_handler(content_types=['text'])
+def func(message):
+    if(message.text == "👋 Поздороваться"):
+        bot.send_message(message.chat.id, text="Привеет.. Спасибо что читаешь статью!)")
+    elif(message.text == "❓ Задать вопрос"):
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
 bot.polling(none_stop=True)
 
 
