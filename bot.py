@@ -13,6 +13,7 @@ def button(message):
     btn=types.KeyboardButton("Кнопка")
     bot.send_message(message.chat.id, 'Выберите что вам надо', reply_markup=markup)
     markup.add(btn)
+
 bot.polling(none_stop=True)
 
 
