@@ -3,7 +3,6 @@ import telebot
 from telebot.types import ReplyKeyboardMarkup
 from telebot.types import InlineKeyboardButton
 import paho.mqtt.client as mqtt
-hostname='mqtt.pi40.ru'
 
 bot = telebot.TeleBot('5201970475:AAHj_B25VK40N-3gKzdVt9rJs8FnRn6mDk8')
 
