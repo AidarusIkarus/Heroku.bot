@@ -84,9 +84,6 @@ def f_pictures():
     photo = open(pct, 'rb')
     return photo , p_answers[pictures.index(pct)]
 
-
-
-
 sticker_gb='CAACAgIAAxkBAAMfYnVLxK9dvz__EWVuKgRB6mQdB_sAAvIZAAKsJalL4vko8zV6PikkBA'
 zagad,otvet=change_zag()
 
