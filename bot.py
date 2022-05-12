@@ -105,6 +105,10 @@ def start(message):
     inline.add(b1)
     b2 = InlineKeyboardButton('Загадки', callback_data='button2')
     inline.add(b2)
+    b2new = InlineKeyboardButton('Новая загадка', callback_data='button2new')
+    inline.add(b2new)
+    b2end = InlineKeyboardButton('Закончить игру', callback_data='button2end')
+    inline.add(b2end)
     b3 = InlineKeyboardButton('Съедобное 🍽 / Несъедобное 🚫', callback_data='button3')
     inline.add(b3)
     b_p = InlineKeyboardButton('Что на картинке?', callback_data='button_p')
@@ -143,6 +147,12 @@ def answer(call):
         flag = True
         bot.send_message(call.message.chat.id, 'Я скажу Вам загадку, попробуйте отгадать её!')
         bot.send_message(call.message.chat.id, 'Загадка:\n\n'+ str(zagad), reply_markup=inline2)
+    elif call.data == 'button_2new':
+        bot.delete_message(call.message.chat.id, call.message.message_id)
+        bot.delete_message(call.message.chat.id, call.message.message_id + 1)
+        bot.send_message(call.message.chat.id, 'Загадка:\n\n' + str(zagad), reply_markup=inline2)
+    elif call.data == 'button_end':
+        bot.send_message(call.message.chat.id, 'Игра приостановлена', reply_markup=inline)
 #############################################################################################################
     elif call.data == 'button3':
         category, thing = f_eatgame()
